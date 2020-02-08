@@ -165,9 +165,21 @@ define Device/glinet_gl-b1300
 endef
 TARGET_DEVICES += glinet_gl-b1300
 
+define Device/hiwifi_c526a
+	$(call Device/FitzImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := HiWiFi
+	DEVICE_MODEL := C526A
+	DEVICE_DTS := qcom-ipq4019-c526a
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_PACKAGES := ipq-wifi-hiwifi_c526a kmod-mt7615e
+endef
+TARGET_DEVICES += hiwifi_c526a
+
 define Device/hugo_ac1200
 	$(call Device/FitImage)
-	DEVICE_TITLE := Hugo AC1200
+	DEVICE_TITLE :=  Hugo AC1200
 	BOARD_NAME := hugo_ac1200
 	DEVICE_DTS := qcom-ipq4019-hugo-ac1200
 	KERNEL_SIZE := 4096k
